@@ -1,4 +1,4 @@
-# <img align="center" src="./doc/img/polyright-icon.png" style="max-height: 64px">  polyright Payment Terminal - URI Scheme Integration
+# <img align="center" src="./docs/img/polyright-icon.png" height="64">  polyright Payment Terminal - URI Scheme Integration
 
 The polyright PaymentTerminal application allows payments to be made through the polyright platform. The application is available under desktop, tablet and smartphone.
 
@@ -83,5 +83,5 @@ The results are passed in Query String of URI.
 ### HTML
 This simple web page shows how to start a transaction and receive the result from the callback URL<br>
 
-<a style="background-color:#449D44;color:white;padding:10px 30px;font-size:20px" href="https://polyright.github.io/PaymentTerminal-URI-Scheme/samples/html/basic.html">Launch Sample</a>
-[Show source code](https://github.com/polyright/PaymentTerminal-URI-Scheme/blob/master/samples/html/basic.html)
+* <a href="https://polyright.github.io/PaymentTerminal-URI-Scheme/samples/html/basic.html">Launch Sample</a>
+* [Show source code](https://github.com/polyright/PaymentTerminal-URI-Scheme/blob/master/samples/html/basic.html)
