@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>polyright Payment Terminal - URI Scheme Integration</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <style>
+        body {
+            font-family: 'Open Sans', sans-serif;
+        }
+
+        .stateContent .noState .toValidateState .successState .cancelState .errorState {
+            background: transparent;
+        }
+
+        .table {
+            table-layout: fixed;
+        }
+
+        .table .td {
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            word-wrap: break-word;
+            word-break: break-all;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="col-sm-offset-4 col-sm-4">
+            <img class="img-responsive center-block" src="data:image/png;base64,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" alt="polyright" />
+        </div>
+
+        <div class="form-horizontal stateContent">
+            <div class="form-group form-group-lg successState collapse">
+                <div class="col-sm-offset-4 col-sm-4 text-center text-success">
+                    <h1><span class="glyphicon glyphicon-ok" aria-hidden="true"></span> Success</h1>
+                </div>
+            </div>
+
+            <div class="form-group form-group-lg cancelState collapse">
+                <div class="col-sm-offset-4 col-sm-4 text-center text-warning">
+                    <h1><span class="glyphicon glyphicon-warning-sign" aria-hidden="true"></span> Canceled</h1>
+                </div>
+            </div>
+
+            <div class="form-group form-group-lg errorState collapse">
+                <div class="col-sm-offset-4 col-sm-4 text-center text-danger">
+                    <h1><span class="glyphicon glyphicon-remove" aria-hidden="true"></span> Error</h1>
+                </div>
+            </div>
+
+            <div class="form-group form-group-lg noState toValidateState collapse">
+                <div class="col-sm-offset-4 col-sm-4">
+                    <div class="btn-group btn-group-justified" data-toggle="buttons">
+                        <label class="btn btn-lg btn-default">
+                            <input type="radio" name="options" id="loadOptionButton">Load
+                        </label>
+                        <label class="btn btn-lg btn-default active">
+                            <input type="radio" name="options" id="unloadOptionButton" checked>Unload
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group form-group-lg noState toValidateState collapse">
+                <div class="col-sm-offset-4 col-sm-4">
+                    <div class="input-group input-group-lg">
+                        <input id="amountInput" type="number" class="form-control" step="0.01" min="0.01" max="1000" value="0.05">
+                        <span class="input-group-addon">CHF</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group form-group-lg noState toValidateState collapse">
+                <div class="col-sm-offset-4 col-sm-4">
+                    <input id="purposeInput" type="text" class="form-control" placeholder="Purpose">
+                </div>
+            </div>
+
+            <div class="form-group form-group-lg noState toValidateState collapse">
+                <div class="col-sm-offset-4 col-sm-4">
+                    <input id="externalTransactionIdInput" type="text" class="form-control" placeholder="External Transaction ID">
+                </div>
+            </div>
+
+            <div class="form-group form-group-lg noState collapse">
+                <div class="col-sm-offset-4 col-sm-4">
+                    <select class="form-control" id="paymentModeSelect">
+                        <option value="">All payment modes</option>
+                        <option value="Epurse">Polyright Card</option>
+                        <option value="Twint">Twint</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-group form-group-lg noState collapse">
+                <div class="col-sm-offset-4 col-sm-4">
+                    <select class="form-control" id="processModeSelect">
+                        <option value="Immediate">Process immediately</option>
+                        <option value="ToValidate" id="processModeToValide">Process to validate</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-group toValidateState successState cancelState errorState collapse">
+                <div class="col-sm-offset-3 col-sm-6">
+                    <table class="table table-condensed" id="propertiesTable">
+                        <thead>
+                            <tr>
+                                <th>Property</th>
+                                <th>Value</th>
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="form-group noState collapse">
+                <div class="col-sm-offset-4 col-sm-4">
+                    <button id="payButton" type="button" class="btn btn-success btn-lg btn-block">Pay</button>
+                </div>
+            </div>
+
+            <div class="form-group toValidateState collapse">
+                <div class="col-sm-offset-4 col-sm-4">
+                    <button id="validateButton" type="button" class="btn btn-success btn-lg btn-block">Validate</button>
+                </div>
+            </div>
+
+            <div class="form-group noState toValidateState collapse">
+                <div class="col-sm-offset-4 col-sm-4">
+                    <button id="cancelButton" type="button" class="btn btn-danger btn-lg btn-block">Cancel</button>
+                </div>
+            </div>
+
+            <div class="form-group successState cancelState errorState collapse">
+                <div class="col-sm-offset-4 col-sm-4">
+                    <button id="newTransactionButton" type="button" class="btn btn-success btn-lg btn-block">New Transaction</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer navbar-fixed-bottom noState collapse">
+        <div class="container">
+            <div class="col-sm-offset-4 col-sm-4 text-center">
+                <a href="https://www.microsoft.com/store/apps/9nblggh5263v?ocid=badge" target="_blank">
+                    <img src="https://assets.windowsphone.com/85864462-9c82-451e-9355-a3d5f874397a/English_get-it-from-MS_InvariantCulture_Default.png" alt="Get it from Microsoft" style="width: 37%" />
+                </a>
+                <a href='https://play.google.com/store/apps/details?id=com.polyright.PaymentTerminal&pcampaignid=MKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1' target="_blank">
+                    <img alt='Get it on Google Play' src='https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png' style="width: 50%" />
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        $(document).ready(function () {
+            const urlParams = new URLSearchParams(decodeURI(window.location.search));
+            for (let pair of urlParams.entries()) {
+                if (pair[1] == null || pair[1] === '')
+                    continue;
+
+                $("#propertiesTable > tbody").append(`<tr><td>${pair[0]}</td><td>${pair[1]}</td></tr>`);
+            }
+
+            if (urlParams.has("validation")) {
+                jQuery(".toValidateState").fadeIn();
+            } else if (urlParams.has("success")) {
+                jQuery(".successState").fadeIn();
+            } else if (urlParams.has("cancel")) {
+                jQuery(".cancelState").fadeIn();
+            } else if (urlParams.has("error")) {
+                jQuery(".errorState").fadeIn();
+            } else {
+                jQuery(".noState").fadeIn();
+            }
+
+            $("#payButton").click(function () {
+                var amount = $("#amountInput").val();
+                amount = Math.abs(amount);
+
+                if ($("#unloadOptionButton").prop("checked"))
+                    amount = -amount;
+
+                const purpose = $("#purposeInput").val();
+                const externalTransactionId = $("#externalTransactionIdInput").val();
+
+                const paymentMode = $("#paymentModeSelect").val();
+                const toValidate = $("#processModeToValide").prop("selected");
+
+                const url = [location.protocol, '//', location.host, location.pathname].join('');
+                const validationCallback = toValidate ? [url, '?validation'].join('') : '';
+                const successCallback = [url, '?success'].join('');
+                const cancelCallback = [url, '?cancel'].join('');
+                const errorCallback = [url, '?error'].join('');
+
+                window.open("pay://transaction" +
+                    "?amount=" + amount +
+                    "&purpose=" + purpose +
+                    "&externalId=" + externalTransactionId +
+                    "&paymentMode=" + paymentMode +
+                    "&validationCallback=" + validationCallback +
+                    "&successCallback=" + successCallback +
+                    "&cancelCallback=" + cancelCallback +
+                    "&errorCallback=" + errorCallback,
+                    "_self");
+            });
+
+            $("#validateButton").click(function () {
+                var amount = $("#amountInput").val();
+                amount = Math.abs(amount);
+
+                if ($("#unloadOptionButton").prop("checked"))
+                    amount = -amount;
+
+                const purpose = $("#purposeInput").val();
+                const externalTransactionId = $("#externalTransactionIdInput").val();
+
+                const url = [location.protocol, '//', location.host, location.pathname].join('');
+                const successCallback = [url, '?success'].join('');
+                const cancelCallback = [url, '?cancel'].join('');
+                const errorCallback = [url, '?error'].join('');
+
+                window.open("pay://transaction/validate" +
+                    "?amount=" + amount +
+                    "&purpose=" + purpose +
+                    "&externalId=" + externalTransactionId +
+                    "&successCallback=" + successCallback +
+                    "&cancelCallback=" + cancelCallback +
+                    "&errorCallback=" + errorCallback,
+                    "_self");
+            });
+
+            $("#cancelButton").click(function () {
+                const url = [location.protocol, '//', location.host, location.pathname].join('');
+                const cancelCallback = [url, '?cancel'].join('');
+
+                window.open("pay://transaction/cancel?cancelCallback=" + cancelCallback, "_self");
+            });
+
+            $("#newTransactionButton").click(function () {
+                const url = [location.protocol, '//', location.host, location.pathname].join('');
+
+                window.open(url, "_self");
+            });
+        });
+    </script>
+</body>
+</html>
