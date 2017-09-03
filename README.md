@@ -66,15 +66,15 @@ The results are passed in Query String of URI.
 
 ### Examples
 - Launch basic transaction: <br>
-[pay://transaction?amount=4.25&successCallback=http://success&cancelCallback=http://cancel&errorCallback=http://error](pay://transaction?amount=4.25&successCallback=http://success&cancelCallback=http://cancel&errorCallback=http://error)
+`pay://transaction?amount=4.25&successCallback=http://success&cancelCallback=http://cancel&errorCallback=http://error`
 - Launch transaction with Twint payment mode only: <br>
-[pay://transaction?amount=4.25&paymentMode=Twint&successCallback=http://success&cancelCallback=http://cancel&errorCallback=http://error](pay://transaction?amount=4.25&paymentMode=Twint&successCallback=http://success&cancelCallback=http://cancel&errorCallback=http://error)
+`pay://transaction?amount=4.25&paymentMode=Twint&successCallback=http://success&cancelCallback=http://cancel&errorCallback=http://error`
 - Launch transaction with validation: <br>
-[pay://transaction?amount=4.25&paymentMode=Twint&validationCallback=http://validate&successCallback=http://success&cancelCallback=http://cancel&errorCallback=http://error](pay://transaction?amount=4.25&paymentMode=Twint&validationCallback=http://validate&successCallback=http://success&cancelCallback=http://cancel&errorCallback=http://error)
+`pay://transaction?amount=4.25&paymentMode=Twint&validationCallback=http://validate&successCallback=http://success&cancelCallback=http://cancel&errorCallback=http://error`
 - Validate current transaction: <br>
-[pay://transaction/validate?amount=4.25&paymentMode=Twint&successCallback=http://success&cancelCallback=http://cancel&errorCallback=http://error](pay://transaction/validate?amount=4.25&paymentMode=Twint&successCallback=http://success&cancelCallback=http://cancel&errorCallback=http://error)
+`pay://transaction/validate?amount=4.25&paymentMode=Twint&successCallback=http://success&cancelCallback=http://cancel&errorCallback=http://error`
 - Cancel current transaction: <br>
-[pay://transaction/cancel?cancelCallback=http://cancel](pay://transaction/cancel?cancelCallback=http://cancel)
+`pay://transaction/cancel?cancelCallback=http://cancel`
 
 <br>
 
