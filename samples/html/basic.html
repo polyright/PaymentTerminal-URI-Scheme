@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
     <title>polyright Payment Terminal - URI Scheme Integration</title>
@@ -8,10 +8,22 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/url-search-params/0.10.0/url-search-params.js"></script>
 
     <style>
+        html {
+            position: relative;
+            min-height: 100%;
+        }
         body {
             font-family: 'Open Sans', sans-serif;
+            margin-bottom: 70px;
+        }
+        .footer {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            min-height: 70px;
         }
 
         .stateContent .noState .toValidateState .successState .cancelState .errorState {
@@ -164,14 +176,13 @@
 
     <script>
         $(document).ready(function () {
-            const urlParams = new URLSearchParams(decodeURI(window.location.search));
-            for (let pair of urlParams.entries()) {
-                if (pair[1] == null || pair[1] === '')
-                    continue;
-
-                $("#propertiesTable > tbody").append(`<tr><td>${pair[0]}</td><td>${pair[1]}</td></tr>`);
-            }
-
+            var urlParams = new URLSearchParams(decodeURI(window.location.search));
+            urlParams.forEach(function(value, key) {
+                if (value != null && value !== '') {
+                    $("#propertiesTable > tbody").append("<tr><td>" + key + "</td><td>" + value + "</td></tr>");
+                }
+            });
+            
             if (urlParams.has("validation")) {
                 jQuery(".toValidateState").fadeIn();
             } else if (urlParams.has("success")) {
@@ -191,17 +202,17 @@
                 if ($("#unloadOptionButton").prop("checked"))
                     amount = -amount;
 
-                const purpose = $("#purposeInput").val();
-                const externalTransactionId = $("#externalTransactionIdInput").val();
+                var purpose = $("#purposeInput").val();
+                var externalTransactionId = $("#externalTransactionIdInput").val();
 
-                const paymentMode = $("#paymentModeSelect").val();
-                const toValidate = $("#processModeToValide").prop("selected");
+                var paymentMode = $("#paymentModeSelect").val();
+                var toValidate = $("#processModeToValide").prop("selected");
 
-                const url = [location.protocol, '//', location.host, location.pathname].join('');
-                const validationCallback = toValidate ? [url, '?validation'].join('') : '';
-                const successCallback = [url, '?success'].join('');
-                const cancelCallback = [url, '?cancel'].join('');
-                const errorCallback = [url, '?error'].join('');
+                var url = [location.protocol, '//', location.host, location.pathname].join('');
+                var validationCallback = toValidate ? [url, '?validation'].join('') : '';
+                var successCallback = [url, '?success'].join('');
+                var cancelCallback = [url, '?cancel'].join('');
+                var errorCallback = [url, '?error'].join('');
 
                 window.open("pay://transaction" +
                     "?amount=" + amount +
@@ -222,13 +233,13 @@
                 if ($("#unloadOptionButton").prop("checked"))
                     amount = -amount;
 
-                const purpose = $("#purposeInput").val();
-                const externalTransactionId = $("#externalTransactionIdInput").val();
+                var purpose = $("#purposeInput").val();
+                var externalTransactionId = $("#externalTransactionIdInput").val();
 
-                const url = [location.protocol, '//', location.host, location.pathname].join('');
-                const successCallback = [url, '?success'].join('');
-                const cancelCallback = [url, '?cancel'].join('');
-                const errorCallback = [url, '?error'].join('');
+                var url = [location.protocol, '//', location.host, location.pathname].join('');
+                var successCallback = [url, '?success'].join('');
+                var cancelCallback = [url, '?cancel'].join('');
+                var errorCallback = [url, '?error'].join('');
 
                 window.open("pay://transaction/validate" +
                     "?amount=" + amount +
@@ -241,14 +252,14 @@
             });
 
             $("#cancelButton").click(function () {
-                const url = [location.protocol, '//', location.host, location.pathname].join('');
-                const cancelCallback = [url, '?cancel'].join('');
+                var url = [location.protocol, '//', location.host, location.pathname].join('');
+                var cancelCallback = [url, '?cancel'].join('');
 
                 window.open("pay://transaction/cancel?cancelCallback=" + cancelCallback, "_self");
             });
 
             $("#newTransactionButton").click(function () {
-                const url = [location.protocol, '//', location.host, location.pathname].join('');
+                var url = [location.protocol, '//', location.host, location.pathname].join('');
 
                 window.open(url, "_self");
             });
