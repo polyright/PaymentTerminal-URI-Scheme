@@ -66,15 +66,15 @@ The results are passed in Query String of URI.
 
 ### Examples
 - Launch basic transaction: <br>
-`pay://transaction?amount=4.25&successCallback=http://success&cancelCallback=http://cancel&errorCallback=http://error`
+`pay://transaction?amount=4.25&successCallback=https://polyright.github.io/PaymentTerminal-URI-Scheme/samples/html/basic.html?success&cancelCallback=https://polyright.github.io/PaymentTerminal-URI-Scheme/samples/html/basic.html?cancel&errorCallback=https://polyright.github.io/PaymentTerminal-URI-Scheme/samples/html/basic.html?error`
 - Launch transaction with Twint payment mode only: <br>
-`pay://transaction?amount=4.25&paymentMode=Twint&successCallback=http://success&cancelCallback=http://cancel&errorCallback=http://error`
+`pay://transaction?amount=4.25&paymentMode=Twint&successCallback=https://polyright.github.io/PaymentTerminal-URI-Scheme/samples/html/basic.html?success&cancelCallback=https://polyright.github.io/PaymentTerminal-URI-Scheme/samples/html/basic.html?cancel&errorCallback=https://polyright.github.io/PaymentTerminal-URI-Scheme/samples/html/basic.html?error`
 - Launch transaction with validation: <br>
-`pay://transaction?amount=4.25&paymentMode=Twint&validationCallback=http://validate&successCallback=http://success&cancelCallback=http://cancel&errorCallback=http://error`
+`pay://transaction?amount=4.25&paymentMode=Twint&validationCallback=https://polyright.github.io/PaymentTerminal-URI-Scheme/samples/html/basic.html?validation&successCallback=https://polyright.github.io/PaymentTerminal-URI-Scheme/samples/html/basic.html?success&cancelCallback=https://polyright.github.io/PaymentTerminal-URI-Scheme/samples/html/basic.html?cancel&errorCallback=https://polyright.github.io/PaymentTerminal-URI-Scheme/samples/html/basic.html?error`
 - Validate current transaction: <br>
-`pay://transaction/validate?amount=4.25&paymentMode=Twint&successCallback=http://success&cancelCallback=http://cancel&errorCallback=http://error`
+`pay://transaction/validate?amount=4.25&paymentMode=Twint&successCallback=https://polyright.github.io/PaymentTerminal-URI-Scheme/samples/html/basic.html?success&cancelCallback=https://polyright.github.io/PaymentTerminal-URI-Scheme/samples/html/basic.html?cancel&errorCallback=https://polyright.github.io/PaymentTerminal-URI-Scheme/samples/html/basic.html?error`
 - Cancel current transaction: <br>
-`pay://transaction/cancel?cancelCallback=http://cancel`
+`pay://transaction/cancel?successCallback=https://polyright.github.io/PaymentTerminal-URI-Scheme/samples/html/basic.html?success&cancelCallback=https://polyright.github.io/PaymentTerminal-URI-Scheme/samples/html/basic.html?cancel&errorCallback=https://polyright.github.io/PaymentTerminal-URI-Scheme/samples/html/basic.html?error`
 
 <br>
 
