@@ -1,6 +1,6 @@
 # <img align="center" src="./docs/img/polyright-icon.png" height="64">  polyright Payment Terminal - URI Scheme Integration
 
-The polyright PaymentTerminal application allows payments to be made through the polyright platform. The application is available for desktop, tablet and smartphone.
+The polyright PaymentTerminal application allows payments on any polyright system through the polyright platform. The application is available for desktop, tablet and smartphone.
 
 <br>
 
