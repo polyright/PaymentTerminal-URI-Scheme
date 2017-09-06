@@ -180,7 +180,22 @@
             urlParams.forEach(function(value, key) {
                 if (value != null && value !== '') {
                     $("#propertiesTable > tbody").append("<tr><td>" + key + "</td><td>" + value + "</td></tr>");
-                }
+					
+					if (key.toLowerCase() === "amount") {
+						var amount = parseFloat(value);
+						if (amount > 0) {
+							$("#loadOptionButton").click();
+						}
+
+						$("#amountInput").val(Math.abs(amount));
+					}
+					if (key.toLowerCase() === "purpose")
+						$("#purposeInput").val(value);
+					if (key.toLowerCase() === "externalid")
+						$("#externalTransactionIdInput").val(value);
+					if (key.toLowerCase() === "paymentMode")
+						$("#paymentModeSelect").val(value.toLowerCase());
+                }				
             });
             
             if (urlParams.has("validation")) {
@@ -194,22 +209,7 @@
             } else {
                 jQuery(".noState").fadeIn();
             }
-			
-			if (urlParams.has("amount")) {
-				var amount = parseFloat(urlParams.get("amount"));
-				if (amount > 0) {
-					$("#loadOptionButton").click();
-				}
-				
-				$("#amountInput").val(Math.abs(amount));
-			}
-			if (urlParams.has("purpose"))
-				$("#purposeInput").val(urlParams.get("purpose"));
-			if (urlParams.has("externalId"))
-				$("#externalTransactionIdInput").val(urlParams.get("externalId"));
-			if (urlParams.has("paymentMode"))
-				$("#paymentModeSelect").val(urlParams.get("paymentMode").toLowerCase());
-				
+							
             $("#payButton").click(function () {
                 var amount = $("#amountInput").val();
                 amount = Math.abs(amount);
