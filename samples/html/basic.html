@@ -181,20 +181,20 @@
                 if (value != null && value !== '') {
                     $("#propertiesTable > tbody").append("<tr><td>" + key + "</td><td>" + value + "</td></tr>");
 					
-					if (key.toLowerCase() === "amount") {
-						var amount = parseFloat(value);
-						if (amount > 0) {
-							$("#loadOptionButton").click();
-						}
+                    if (key.toLowerCase() === "amount") {
+                        var amount = parseFloat(value);
+                        if (amount > 0) {
+                            $("#loadOptionButton").click();
+                        }
 
-						$("#amountInput").val(Math.abs(amount));
-					}
-					if (key.toLowerCase() === "purpose")
-						$("#purposeInput").val(value);
-					if (key.toLowerCase() === "externalid")
-						$("#externalTransactionIdInput").val(value);
-					if (key.toLowerCase() === "paymentMode")
-						$("#paymentModeSelect").val(value.toLowerCase());
+                        $("#amountInput").val(Math.abs(amount));
+                    }
+                    if (key.toLowerCase() === "purpose")
+                        $("#purposeInput").val(value);
+                    if (key.toLowerCase() === "externalid")
+                        $("#externalTransactionIdInput").val(value);
+                    if (key.toLowerCase() === "paymentMode")
+                        $("#paymentModeSelect").val(value.toLowerCase());
                 }				
             });
             
