@@ -65,14 +65,14 @@ The results are passed in Query String of URI.
 <br>
 
 ### Examples
-- Launch basic transaction: <br>
-`pay://transaction?amount=4.25&successCallback=https://polyright.github.io/PaymentTerminal-URI-Scheme/samples/html/basic.html?success&cancelCallback=https://polyright.github.io/PaymentTerminal-URI-Scheme/samples/html/basic.html?cancel&errorCallback=https://polyright.github.io/PaymentTerminal-URI-Scheme/samples/html/basic.html?error`
-- Launch transaction with Twint payment mode only: <br>
-`pay://transaction?amount=4.25&paymentMode=Twint&successCallback=https://polyright.github.io/PaymentTerminal-URI-Scheme/samples/html/basic.html?success&cancelCallback=https://polyright.github.io/PaymentTerminal-URI-Scheme/samples/html/basic.html?cancel&errorCallback=https://polyright.github.io/PaymentTerminal-URI-Scheme/samples/html/basic.html?error`
-- Launch transaction with validation: <br>
-`pay://transaction?amount=4.25&paymentMode=Twint&validationCallback=https://polyright.github.io/PaymentTerminal-URI-Scheme/samples/html/basic.html?validation&successCallback=https://polyright.github.io/PaymentTerminal-URI-Scheme/samples/html/basic.html?success&cancelCallback=https://polyright.github.io/PaymentTerminal-URI-Scheme/samples/html/basic.html?cancel&errorCallback=https://polyright.github.io/PaymentTerminal-URI-Scheme/samples/html/basic.html?error`
-- Validate current transaction: <br>
-`pay://transaction/validate?amount=4.25&paymentMode=Twint&successCallback=https://polyright.github.io/PaymentTerminal-URI-Scheme/samples/html/basic.html?success&cancelCallback=https://polyright.github.io/PaymentTerminal-URI-Scheme/samples/html/basic.html?cancel&errorCallback=https://polyright.github.io/PaymentTerminal-URI-Scheme/samples/html/basic.html?error`
+- Start a payment transaction with any payment mode (Polyright card or TWINT): <br>
+`pay://transaction?amount=-4.25&successCallback=https://polyright.github.io/PaymentTerminal-URI-Scheme/samples/html/basic.html?success&cancelCallback=https://polyright.github.io/PaymentTerminal-URI-Scheme/samples/html/basic.html?cancel&errorCallback=https://polyright.github.io/PaymentTerminal-URI-Scheme/samples/html/basic.html?error`
+- Start a payment transaction with TWINT: <br>
+`pay://transaction?amount=-4.25&paymentMode=Twint&successCallback=https://polyright.github.io/PaymentTerminal-URI-Scheme/samples/html/basic.html?success&cancelCallback=https://polyright.github.io/PaymentTerminal-URI-Scheme/samples/html/basic.html?cancel&errorCallback=https://polyright.github.io/PaymentTerminal-URI-Scheme/samples/html/basic.html?error`
+- Start a payment transaction with TWINT which data has to be validated: <br>
+`pay://transaction?amount=-4.25&paymentMode=Twint&validationCallback=https://polyright.github.io/PaymentTerminal-URI-Scheme/samples/html/basic.html?validation&successCallback=https://polyright.github.io/PaymentTerminal-URI-Scheme/samples/html/basic.html?success&cancelCallback=https://polyright.github.io/PaymentTerminal-URI-Scheme/samples/html/basic.html?cancel&errorCallback=https://polyright.github.io/PaymentTerminal-URI-Scheme/samples/html/basic.html?error`
+- Validate current transaction defining a new amount (discount): <br>
+`pay://transaction/validate?amount=-3.15&paymentMode=Twint&successCallback=https://polyright.github.io/PaymentTerminal-URI-Scheme/samples/html/basic.html?success&cancelCallback=https://polyright.github.io/PaymentTerminal-URI-Scheme/samples/html/basic.html?cancel&errorCallback=https://polyright.github.io/PaymentTerminal-URI-Scheme/samples/html/basic.html?error`
 - Cancel current transaction: <br>
 `pay://transaction/cancel?successCallback=https://polyright.github.io/PaymentTerminal-URI-Scheme/samples/html/basic.html?success&cancelCallback=https://polyright.github.io/PaymentTerminal-URI-Scheme/samples/html/basic.html?cancel&errorCallback=https://polyright.github.io/PaymentTerminal-URI-Scheme/samples/html/basic.html?error`
 
