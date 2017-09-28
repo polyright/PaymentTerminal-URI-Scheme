@@ -85,3 +85,12 @@ This simple web page shows how to start a transaction and receive the result fro
 
 * <a href="https://polyright.github.io/PaymentTerminal-URI-Scheme/samples/html/basic.html">Launch Sample</a>
 * [Show source code](https://github.com/polyright/PaymentTerminal-URI-Scheme/blob/master/samples/html/basic.html)
+
+###### Why the application does not launch from Google Chrome?
+This is a bug in Google Chrome, try:
+1. Close Google Chrome application and system tray
+2. Open "%LOCALAPPDATA%\Google\Chrome\User Data\Profile 1\Preferences" file
+3. Search "excluded_schemes" section
+4. Add "pay":false
+5. Save and launch sample
+6. Done!
