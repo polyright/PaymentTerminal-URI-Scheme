@@ -61,9 +61,17 @@ For full integration and best user experience, use the REST API and CardReader S
 <br>
 
 ### Callback Support
-Callbacks are used to send the result of operations to calling applications. 
+Callbacks are used to send the result of operations to calling application. 
 This can be a URI Scheme of an application or a URL of a web page. 
 The results are passed in Query String of URI.
+
+<br>
+
+### Using URI Scheme in an application
+* [Windows Desktop Aplication](https://msdn.microsoft.com/en-us/library/aa767914(v=vs.85).aspx)
+* [Windows 10 UWP Application](https://docs.microsoft.com/en-us/windows/uwp/launch-resume/handle-uri-activation)
+* [Android Application](https://developer.android.com/training/basics/intents/filters.html)
+* [iOS Application](https://developer.apple.com/library/content/documentation/iPhone/Conceptual/iPhoneOSProgrammingGuide/Inter-AppCommunication/Inter-AppCommunication.html)
 
 <br>
 
@@ -92,12 +100,6 @@ This simple web page shows how to start a transaction and receive the result fro
 <br>
 
 ## FAQ
-### How to support URI Scheme in my application?
-* [Windows Desktop Aplication](https://msdn.microsoft.com/en-us/library/aa767914(v=vs.85).aspx)
-* [Windows 10 UWP Application](https://docs.microsoft.com/en-us/windows/uwp/launch-resume/handle-uri-activation)
-* [Android Application](https://developer.android.com/training/basics/intents/filters.html)
-* [iOS Application](https://developer.apple.com/library/content/documentation/iPhone/Conceptual/iPhoneOSProgrammingGuide/Inter-AppCommunication/Inter-AppCommunication.html)
-
 ### Why the application does not launch from Google Chrome?
 This is a bug in Google Chrome, try:
 1. Close Google Chrome application and system tray
