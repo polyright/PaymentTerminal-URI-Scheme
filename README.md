@@ -52,11 +52,11 @@ For full integration and best user experience, use the REST API and CardReader S
 <br>
 
 ### Sequence diagrams
-![Not to validate transaction](./doc/img/payment_terminal_not_validated_transaction.png)
+![Not to validate transaction](./docs/img/payment_terminal_not_validated_transaction.png)
 <br>
-![Transaciton to be validated](./doc/img/payment_terminal_validated_transaction.png)
+![Transaction to be validated](./docs/img/payment_terminal_validated_transaction.png)
 <br>
-![Cancelled transaction](./doc/img/payment_terminal_cancelled_transaction.png)
+![Cancelled transaction](./docs/img/payment_terminal_cancelled_transaction.png)
 
 <br>
 
