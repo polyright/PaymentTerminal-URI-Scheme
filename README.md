@@ -1,4 +1,4 @@
-# <img align="center" src="./docs/img/polyright-icon.png" height="64">  polyright Payment Terminal - URI Scheme Integration
+# <img align="center" src="./docs/img/polyright-icon.png" height="64">  polyright payment terminal - URI Scheme Integration
 
 The polyright PaymentTerminal application allows payments on any polyright system through the polyright platform. The application is available for desktop, tablet and smartphone.
 
@@ -14,6 +14,7 @@ The polyright PaymentTerminal application allows payments on any polyright syste
   - Windows Mobile 10.0.586
   - Android 4.4
   - iOS 11 *(coming soon)*
+
 
 ### Installation
 1. Install application from App Store
@@ -49,31 +50,34 @@ For full integration and best user experience, use the REST API and CardReader S
 | `cancelCallback`     | URI Scheme called when the transaction was cancelled                                                                                                                                                                                   |
 | `errorCallback`      | URI Scheme called when an error occurred while processing the transaction                                                                                                                                                              |
 
-<br>
 
 ### Sequence diagrams
-![Not to validate transaction](./docs/img/payment_terminal_not_validated_transaction.png)
+<kbd>
+<img src="./docs/img/payment_terminal_not_validated_transaction.png">
+</kbd>
 <br>
-![Transaction to be validated](./docs/img/payment_terminal_validated_transaction.png)
 <br>
-![Cancelled transaction](./docs/img/payment_terminal_cancelled_transaction.png)
-
+<kbd>
+<img src="./docs/img/payment_terminal_validated_transaction.png">
+</kbd>
 <br>
+<kbd>
+<img src="./docs/img/payment_terminal_cancelled_transaction.png">
+</kbd>
 
-### Callback Support
-Callbacks are used to send the result of operations to calling application. 
-This can be a URI Scheme of an application or a URL of a web page. 
-The results are passed in Query String of URI.
 
-<br>
+### Callbacks
+Callbacks are used by the payment terminal to send the result back of operations to calling application. 
+It can be done through **URI Scheme** of an application or a **URL** of a web page. 
+Results are passed as Query String in the URI.
 
-### Using URI Scheme in an application
+
+#### Allowing callbacks in an application
 * [Windows Desktop Aplication](https://msdn.microsoft.com/en-us/library/aa767914(v=vs.85).aspx)
 * [Windows 10 UWP Application](https://docs.microsoft.com/en-us/windows/uwp/launch-resume/handle-uri-activation)
 * [Android Application](https://developer.android.com/training/basics/intents/filters.html)
 * [iOS Application](https://developer.apple.com/library/content/documentation/iPhone/Conceptual/iPhoneOSProgrammingGuide/Inter-AppCommunication/Inter-AppCommunication.html)
 
-<br>
 
 ### Examples
 - Start a payment transaction with any payment mode (Polyright card or TWINT): <br>
