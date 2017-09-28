@@ -1,4 +1,4 @@
-# <img align="center" src="./docs/img/polyright-icon.png" height="64">  polyright Payment Terminal - URI Scheme Integration
+# <img align="center" src="./docs/img/polyright-icon.png" height="64">  polyright payment terminal - URI Scheme Integration
 
 The polyright PaymentTerminal application allows payments on any polyright system through the polyright platform. The application is available for desktop, tablet and smartphone.
 
@@ -14,6 +14,7 @@ The polyright PaymentTerminal application allows payments on any polyright syste
   - Windows Mobile 10.0.586
   - Android 4.4
   - iOS 11 *(coming soon)*
+
 
 ### Installation
 1. Install application from App Store
@@ -37,7 +38,7 @@ For full integration and best user experience, use the REST API and CardReader S
 | `pay://transaction/validate` | Validate the current transaction |
 | `pay://transaction/cancel`   | Cancel the current transaction   |
 
-###### Parameters
+##### Parameters
 | Parameters           | Description                                                                                                                                                                                                                            |
 |----------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | `amount`             | Amount with point as decimal separator                                                                                                                                                                                                 |
@@ -49,20 +50,35 @@ For full integration and best user experience, use the REST API and CardReader S
 | `cancelCallback`     | URI Scheme called when the transaction was cancelled                                                                                                                                                                                   |
 | `errorCallback`      | URI Scheme called when an error occurred while processing the transaction                                                                                                                                                              |
 
+
+### Sequence diagrams
+<kbd>
+<img src="./docs/img/payment_terminal_not_validated_transaction.png">
+</kbd>
 <br>
+<br>
+<kbd>
+<img src="./docs/img/payment_terminal_validated_transaction.png">
+</kbd>
+<br>
+<br>
+<kbd>
+<img src="./docs/img/payment_terminal_cancelled_transaction.png">
+</kbd>
 
-### Callback Support
-Callbacks are used to send the result of operations to calling applications. 
-This can be a URI Scheme of an application or a URL of a web page. 
-The results are passed in Query String of URI.
 
-###### How to support URI Scheme in your application?
+### Callbacks
+Callbacks are used by the payment terminal to send the result back of operations to calling application. 
+It can be done through **URI Scheme** of an application or a **URL** of a web page. 
+Results are passed as Query String in the URI.
+
+
+#### Allowing callbacks in an application
 * [Windows Desktop Aplication](https://msdn.microsoft.com/en-us/library/aa767914(v=vs.85).aspx)
 * [Windows 10 UWP Application](https://docs.microsoft.com/en-us/windows/uwp/launch-resume/handle-uri-activation)
 * [Android Application](https://developer.android.com/training/basics/intents/filters.html)
 * [iOS Application](https://developer.apple.com/library/content/documentation/iPhone/Conceptual/iPhoneOSProgrammingGuide/Inter-AppCommunication/Inter-AppCommunication.html)
 
-<br>
 
 ### Examples
 - Start a payment transaction with any payment mode (Polyright card or TWINT): <br>
@@ -86,12 +102,14 @@ This simple web page shows how to start a transaction and receive the result fro
 * <a href="https://polyright.github.io/PaymentTerminal-URI-Scheme/samples/html/basic.html">Launch Sample</a>
 * [Show source code](https://github.com/polyright/PaymentTerminal-URI-Scheme/blob/master/samples/html/basic.html)
 
+<br>
+
 ## FAQ
 ### Why the application does not launch from Google Chrome?
 This is a bug in Google Chrome, try:
 1. Close Google Chrome application and system tray
-2. Open "%LOCALAPPDATA%\Google\Chrome\User Data\Profile 1\Preferences" file
-3. Search "excluded_schemes" section
-4. Add "pay":false
+2. Open `%LOCALAPPDATA%\Google\Chrome\User Data\Profile 1\Preferences` file
+3. Search `excluded_schemes` section
+4. Add `"pay":false`
 5. Save and launch sample
 6. Done!
