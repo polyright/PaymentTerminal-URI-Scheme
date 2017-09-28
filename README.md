@@ -38,7 +38,7 @@ For full integration and best user experience, use the REST API and CardReader S
 | `pay://transaction/validate` | Validate the current transaction |
 | `pay://transaction/cancel`   | Cancel the current transaction   |
 
-###### Parameters
+##### Parameters
 | Parameters           | Description                                                                                                                                                                                                                            |
 |----------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | `amount`             | Amount with point as decimal separator                                                                                                                                                                                                 |
@@ -60,6 +60,7 @@ For full integration and best user experience, use the REST API and CardReader S
 <kbd>
 <img src="./docs/img/payment_terminal_validated_transaction.png">
 </kbd>
+<br>
 <br>
 <kbd>
 <img src="./docs/img/payment_terminal_cancelled_transaction.png">
