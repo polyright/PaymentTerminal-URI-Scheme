@@ -14,7 +14,10 @@ The polyright PaymentTerminal application allows payments on any polyright syste
   - Windows Mobile 10.0.586
   - Android 4.4
   - iOS 11 *(coming soon)*
-- Only internet explorer and microsoft edge browsers are currently supported
+- Compatible browsers: 
+  - Internet Explorer 
+  - Microsoft Edge
+  - Mozilla Firefox
 
 ### Installation
 1. Install application from App Store
