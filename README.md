@@ -51,16 +51,19 @@ For full integration and best user experience, use the REST API and CardReader S
 
 <br>
 
+### Sequence diagrams
+![Not to validate transaction](./doc/img/payment_terminal_not_validated_transaction.png)
+<br>
+![Transaciton to be validated](./doc/img/payment_terminal_validated_transaction.png)
+<br>
+![Cancelled transaction](./doc/img/payment_terminal_cancelled_transaction.png)
+
+<br>
+
 ### Callback Support
 Callbacks are used to send the result of operations to calling applications. 
 This can be a URI Scheme of an application or a URL of a web page. 
 The results are passed in Query String of URI.
-
-###### How to support URI Scheme in your application?
-* [Windows Desktop Aplication](https://msdn.microsoft.com/en-us/library/aa767914(v=vs.85).aspx)
-* [Windows 10 UWP Application](https://docs.microsoft.com/en-us/windows/uwp/launch-resume/handle-uri-activation)
-* [Android Application](https://developer.android.com/training/basics/intents/filters.html)
-* [iOS Application](https://developer.apple.com/library/content/documentation/iPhone/Conceptual/iPhoneOSProgrammingGuide/Inter-AppCommunication/Inter-AppCommunication.html)
 
 <br>
 
@@ -86,12 +89,20 @@ This simple web page shows how to start a transaction and receive the result fro
 * <a href="https://polyright.github.io/PaymentTerminal-URI-Scheme/samples/html/basic.html">Launch Sample</a>
 * [Show source code](https://github.com/polyright/PaymentTerminal-URI-Scheme/blob/master/samples/html/basic.html)
 
+<br>
+
 ## FAQ
+### How to support URI Scheme in my application?
+* [Windows Desktop Aplication](https://msdn.microsoft.com/en-us/library/aa767914(v=vs.85).aspx)
+* [Windows 10 UWP Application](https://docs.microsoft.com/en-us/windows/uwp/launch-resume/handle-uri-activation)
+* [Android Application](https://developer.android.com/training/basics/intents/filters.html)
+* [iOS Application](https://developer.apple.com/library/content/documentation/iPhone/Conceptual/iPhoneOSProgrammingGuide/Inter-AppCommunication/Inter-AppCommunication.html)
+
 ### Why the application does not launch from Google Chrome?
 This is a bug in Google Chrome, try:
 1. Close Google Chrome application and system tray
-2. Open "%LOCALAPPDATA%\Google\Chrome\User Data\Profile 1\Preferences" file
-3. Search "excluded_schemes" section
-4. Add "pay":false
+2. Open `%LOCALAPPDATA%\Google\Chrome\User Data\Profile 1\Preferences` file
+3. Search `excluded_schemes` section
+4. Add `"pay":false`
 5. Save and launch sample
 6. Done!
