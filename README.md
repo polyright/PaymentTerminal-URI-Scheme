@@ -53,17 +53,17 @@ For full integration and best user experience, use the REST API and CardReader S
 
 ### Sequence diagrams
 <kbd>
-<img src="./docs/img/payment_terminal_not_validated_transaction.png">
+<img src="./docs/img/payment_terminal_not_validated_transaction.png?raw=true">
 </kbd>
 <br>
 <br>
 <kbd>
-<img src="./docs/img/payment_terminal_validated_transaction.png">
+<img src="./docs/img/payment_terminal_validated_transaction.png?raw=true">
 </kbd>
 <br>
 <br>
 <kbd>
-<img src="./docs/img/payment_terminal_cancelled_transaction.png">
+<img src="./docs/img/payment_terminal_cancelled_transaction.png?raw=true">
 </kbd>
 
 
