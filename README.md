@@ -74,7 +74,7 @@ Results are passed as Query String in the URI.
 
 
 #### Allowing callbacks in an application
-* [Windows Desktop Aplication](https://msdn.microsoft.com/en-us/library/aa767914(v=vs.85).aspx)
+* [Windows Desktop Application](https://msdn.microsoft.com/en-us/library/aa767914(v=vs.85).aspx)
 * [Windows 10 UWP Application](https://docs.microsoft.com/en-us/windows/uwp/launch-resume/handle-uri-activation)
 * [Android Application](https://developer.android.com/training/basics/intents/filters.html)
 * [iOS Application](https://developer.apple.com/library/content/documentation/iPhone/Conceptual/iPhoneOSProgrammingGuide/Inter-AppCommunication/Inter-AppCommunication.html)
