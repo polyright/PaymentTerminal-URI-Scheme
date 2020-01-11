@@ -11,9 +11,8 @@ The polyright PaymentTerminal application allows payments on any polyright syste
 - Internet connection
 - Compatible platforms:
   - Windows 10.0.10240
-  - Windows Mobile 10.0.586
   - Android 4.4
-  - iOS 11 *(coming soon)*
+  - iOS 13 *(coming soon)*
 
 
 ### Installation
