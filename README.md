@@ -1,8 +1,6 @@
-# <img align="center" src="./docs/img/polyright-icon.png" height="64">  polyright payment terminal - URI Scheme Integration
+# <img align="center" src="./docs/img/polyright-icon.png" height="64">  polyright payment - URI Scheme Integration
 
 The polyright PaymentTerminal application allows payments on any polyright system through the polyright platform. The application is available for desktop, tablet and smartphone.
-
-<br>
 
 ## Getting Started
 
@@ -14,7 +12,6 @@ The polyright PaymentTerminal application allows payments on any polyright syste
   - Android 5.0
   - iOS 14 *(coming soon)*
 
-
 ### Installation
 1. Install application from App Store
     * [Windows Store](https://www.microsoft.com/store/p/polyright-payment-terminal/9nblggh5263v)
@@ -23,8 +20,6 @@ The polyright PaymentTerminal application allows payments on any polyright syste
 2. Launch application
 3. Activate Payment Terminal
 4. Ready!
-
-<br>
 
 ## Integration
 URI Scheme is supported by Payment Terminal to allow simplified integration of polyright payment from other applications and websites.
@@ -48,8 +43,6 @@ For full integration and best user experience, use the REST API and CardReader S
 | `successCallback`    | URI Scheme called when the transaction was successfully processed                                                                                                                                                                      |
 | `cancelCallback`     | URI Scheme called when the transaction was cancelled                                                                                                                                                                                   |
 | `errorCallback`      | URI Scheme called when an error occurred while processing the transaction                                                                                                                                                              |
-
-
 ### Sequence diagrams
 <kbd>
 <img src="./docs/img/payment_terminal_not_validated_transaction.png?raw=true">
@@ -65,19 +58,16 @@ For full integration and best user experience, use the REST API and CardReader S
 <img src="./docs/img/payment_terminal_cancelled_transaction.png?raw=true">
 </kbd>
 
-
 ### Callbacks
 Callbacks are used by the payment terminal to send the result back of operations to calling application. 
 It can be done through **URI Scheme** of an application or a **URL** of a web page. 
 Results are passed as Query String in the URI.
-
 
 #### Allowing callbacks in an application
 * [Windows Desktop Application](https://msdn.microsoft.com/en-us/library/aa767914(v=vs.85).aspx)
 * [Windows 10 UWP Application](https://docs.microsoft.com/en-us/windows/uwp/launch-resume/handle-uri-activation)
 * [Android Application](https://developer.android.com/training/basics/intents/filters.html)
 * [iOS Application](https://developer.apple.com/library/content/documentation/iPhone/Conceptual/iPhoneOSProgrammingGuide/Inter-AppCommunication/Inter-AppCommunication.html)
-
 
 ### Examples
 - Start a payment transaction with any payment mode (Polyright card or TWINT): <br>
@@ -91,8 +81,6 @@ Results are passed as Query String in the URI.
 - Cancel current transaction: <br>
 `pay://transaction/cancel?successCallback=https://polyright.github.io/PaymentTerminal-URI-Scheme/samples/html/basic.html?success&cancelCallback=https://polyright.github.io/PaymentTerminal-URI-Scheme/samples/html/basic.html?cancel&errorCallback=https://polyright.github.io/PaymentTerminal-URI-Scheme/samples/html/basic.html?error`
 
-<br>
-
 ## Samples
 
 ### HTML
@@ -100,8 +88,6 @@ This simple web page shows how to start a transaction and receive the result fro
 
 * <a href="https://polyright.github.io/PaymentTerminal-URI-Scheme/samples/html/basic.html">Launch Sample</a>
 * [Show source code](https://github.com/polyright/PaymentTerminal-URI-Scheme/blob/master/samples/html/basic.html)
-
-<br>
 
 ## FAQ
 ### Why the application does not launch from Google Chrome?
