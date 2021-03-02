@@ -10,9 +10,9 @@ The polyright PaymentTerminal application allows payments on any polyright syste
 - RFID or NFC reader
 - Internet connection
 - Compatible platforms:
-  - Windows 10.0.10240
-  - Android 4.4
-  - iOS 13 *(coming soon)*
+  - Windows 10.0.17763 (1809)
+  - Android 5.0
+  - iOS 14 *(coming soon)*
 
 
 ### Installation
